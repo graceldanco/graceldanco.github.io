@@ -1,20 +1,77 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: 'sans-serif','jost';
 }
-.main{
-    width: 100%;
+.container {
+    /* width: 100%; */
     height: 100vh;
-    background: #02382b; /* #493e75*/
-    color: #fff;
+    background: #F1F1F1; /* #02382b #493e75*/
+    color: rgb(0, 82, 71);
     font: 'Jost';
+    /* align-items: top; */
+    /* text-align:left;
+    vertical-align:top; */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* justify-content: left; */
+    /* justify-content: center; */
 }
-
+.verticalline{
+    background: #1fff7c;
+    height: 100%;
+    padding: 2px;
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+}
+.verticalline--one{
+    left:18em;
+    width: 1px;
+}
+.verticalline--two{
+    left:36em;
+    width: 1px;
+}
+.verticalline--three{
+    left:54em;
+    width: 1px;
+}
+.verticalline--four{
+    left:72em;
+    width: 1px;
+}
+.horizantalline{
+    background: #0000e6;
+    width: 100%;
+    padding: 2px;
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+}
+.horizantalline--one{
+    top:10em;
+    height: 1px;
+}
+.horizantalline--two{
+    top:20em;
+    height: 1px;
+}
+.horizantalline--three{
+    top:30em;
+    height: 1px;
+}
+.horizantalline--four{
+    top:40em;
+    height: 1px;
+}
+/*
+    top: 20em;
+    left: 500;
+    margin: 0;
+*/
 /*
 .arrow {
     width: 120px;
