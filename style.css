@@ -91,6 +91,83 @@ body {
     width: 300px; /* Set custom width for image 2 */
     height: auto;
 }
+.vertical-line {
+    width: 2px; /* Line width */
+    height: 50vh; /* Half the height of the viewport */
+    background-color: rgb(29, 3, 143); /* Line color */
+    margin: 25vh 0; /* Padding above and below (25% of the viewport height) */
+    position: absolute;
+    left: 33%; /* Move the line a quarter into the page */
+    top: 0;
+}
+.media {
+    position: absolute;
+    font-size: 20px; 
+    color: black; 
+}
+.star {
+    position: absolute;
+    font-size: 24px; /* Adjust star size */
+    color: rgb(54, 74, 252); /* Star color */
+}
+
+/* Custom positioning for each star */
+.star1 {
+    top: 23%; 
+    left: calc(33% - 11px);
+}
+.media1 {
+    top: calc(23% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star1half {
+    top: 27%; 
+    left: calc(33% - 11px);
+}
+.media1half {
+    top: calc(27% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star2 {
+    top: 36%; 
+    left: calc(33% - 11px);
+}
+.media2 {
+    top: calc(36% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star3 {
+    top: 42%; 
+    left: calc(33% - 11px);
+}
+.media3 {
+    top: calc(42% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star4 {
+    top: 52%; 
+    left: calc(33% - 11px);
+}
+.media4 {
+    top: calc(52% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star5 {
+    top: 64%; 
+    left: calc(33% - 11px);
+}
+.media5 {
+    top: calc(64% + 5.5px); 
+    left: calc(33% + 22px);
+}
+.star6 {
+    top: 72%; 
+    left: calc(33% - 11px);
+}
+.media6 {
+    top: calc(72% + 5.5px); 
+    left: calc(33% + 22px);
+}
 
 
 /* Add more custom classes for additional images */
