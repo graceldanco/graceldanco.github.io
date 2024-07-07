@@ -91,6 +91,15 @@ body {
     width: 300px; /* Set custom width for image 2 */
     height: auto;
 }
+.timeline-header {
+    position: absolute;
+    top: 15%; /* Place the header a quarter down the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center the header horizontally */
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
 .vertical-line {
     width: 2px; /* Line width */
     height: 50vh; /* Half the height of the viewport */
@@ -167,6 +176,39 @@ body {
 .media6 {
     top: calc(72% + 5.5px); 
     left: calc(33% + 22px);
+}
+.content {
+    position: absolute;
+    top: 10%;
+    left: 25%; /* Position content 25% from the left */
+    width: 50%; /* Adjust the width if needed */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+ol {
+    list-style-position: inside; /* Ensure list numbers are inside the content box */
+    padding-left: 20px;
+}
+.blurb {
+    margin-left: 20px; /* Indent the blurb */
+    font-size: 14px;
+}
+.category {
+    margin-left: 20px;
+    font-size: 14px;
+}
+.note {
+    margin-top: 20px; /* Space above the note paragraph */
+    font-size: 16px;
+    color: black;
 }
 
 
