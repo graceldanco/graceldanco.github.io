@@ -93,16 +93,16 @@ body {
 }
 .timeline-header {
     position: absolute;
-    top: 15%; /* Place the header a quarter down the page */
+    top: 10%; /* Place the header a quarter down the page */
     left: 50%;
-    transform: translateX(-50%); /* Center the header horizontally */
-    font-size: 24px;
+    transform: translateX(-40%); /* Center the header horizontally */
+    font-size: 18px;
     color: black;
-    text-align: center;
+    text-align: left;
 }
 .vertical-line {
-    width: 2px; /* Line width */
-    height: 50vh; /* Half the height of the viewport */
+    width: 50vh; /* Line width */
+    height: 2vh; /* Half the height of the viewport */
     background-color: rgb(29, 3, 143); /* Line color */
     margin: 25vh 0; /* Padding above and below (25% of the viewport height) */
     position: absolute;
