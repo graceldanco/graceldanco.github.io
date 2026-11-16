@@ -114,11 +114,14 @@ p:last-child { margin-bottom: 0; }
   .side { position: static; min-height: 0; }
   .side .name { margin-bottom: 14px; }
   .side nav { flex-direction: row; flex-wrap: wrap; gap: 4px 18px; }
-  .sig { margin: 56px 0 0; }
+  .sig { padding-top: 56px; }
   .portrait { width: 180px; height: 180px; }
   .writing li { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
 }
-.sig { display: block; margin: 72px 0 0 52px; font-family: "Tangerine", cursive; font-weight: 700; font-size: 28px; line-height: 1; color: var(--accent); }
+/* signature: centered under the content, pushed toward the bottom of the viewport on short pages */
+main { display: flex; flex-direction: column; }
+@media (min-width: 721px) { main { min-height: calc(100vh - 136px - env(safe-area-inset-top, 0px)); } }
+.sig { display: block; margin: auto 0 0; padding-top: 72px; text-align: center; font-family: "Tangerine", cursive; font-weight: 700; font-size: 28px; line-height: 1; color: var(--accent); }
 </style>
 </head>
 <body>
