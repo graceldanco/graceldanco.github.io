@@ -66,6 +66,7 @@ p:last-child { margin-bottom: 0; }
 .side nav { display: flex; flex-direction: column; gap: 2px; }
 .side nav a { color: var(--muted); }
 .side nav a:hover, .side nav a.active { color: var(--accent); }
+.side .socials { margin-top: 28px; font-size: 12px; letter-spacing: .02em; }
 
 /* content */
 .page { display: none; }
@@ -124,6 +125,7 @@ p:last-child { margin-bottom: 0; }
   .side { position: static; min-height: 0; }
   .side .name { margin-bottom: 14px; }
   .side nav { flex-direction: row; flex-wrap: wrap; gap: 4px 18px; }
+  .side .socials { margin-top: 10px; }
   .sig { padding-top: 56px; }
   .portrait { width: 180px; height: 180px; }
   .writing li { grid-template-columns: 1fr; gap: 0; padding: 8px 0; }
@@ -182,6 +184,11 @@ main { display: flex; flex-direction: column; }
       <a href="#library" data-page="library">Library</a>
       <a href="#photography" data-page="photography">Photography</a>
     </nav>
+    <nav class="socials" aria-label="Profiles">
+      <a href="https://x.com/_grace_lily">x</a>
+      <a href="https://github.com/graceldanco">github</a>
+      <a href="https://www.linkedin.com/in/grace-danco-bbb020192/">linkedin</a>
+    </nav>
   </aside>
 
   <main>
@@ -191,7 +198,7 @@ main { display: flex; flex-direction: column; }
         <p class="open">Hi, I’m Grace.</p>
         <ul>
           <li>I recently moved from NYC to LA.</li>
-          <li>I work as a Sr Data Scientist at Uniswap. Crypto went from a fascination to a career &amp; I’ve been lucky enough to have had various jobs in the industry for the past 5 years.</li>
+          <li>I work as a Sr Data Scientist at <a href="https://uniswap.org">Uniswap</a>. Crypto went from a fascination to a career &amp; I’ve been lucky enough to have had various jobs in the industry for the past 5 years.</li>
           <li>I find joy in taking film photographs, developing &amp; printing them.</li>
           <li>My writing comes in two forms: an outlet for my imagination, or a way to learn what I don’t know. I am working on sharing both of these more publicly.</li>
           <li>I’ve recently become obsessed with materials. It grew out of a fascination around how difficult it is to remove plastics from my life (yes the microplastics frenzy got to me) and became a deeper love for learning how raw materials are transformed &amp; the supply chains that distribute them across the globe. If you’re also curious, I’ve put together a <a href="#library">list of resources</a> I’ve been consuming to learn!</li>
