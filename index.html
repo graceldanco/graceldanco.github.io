@@ -6,7 +6,7 @@
 <title>Grace Lily Danco</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;1,400&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;1,400&family=Tangerine:wght@700&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: light;
@@ -50,6 +50,9 @@ body {
 .lamp.tug .string { transform: scaleY(1.22); }
 .lamp .on { opacity: var(--glow); transition: opacity .7s ease; }
 .lamp .shade { transition: fill .7s ease, fill-opacity .7s ease; }
+.lamp .hint { opacity: calc(1 - var(--glow)); transition: opacity .7s ease; color: var(--accent); }
+.lamp .hint text { font-family: "Caveat", cursive; font-weight: 500; font-size: 13px; fill: currentColor; }
+.lamp .hint path { fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 720px) { .lamp { right: 18px; width: 72px; height: 150px; } .glow { background: radial-gradient(ellipse 90vw 60vh at calc(100% - 54px) 90px, rgba(255,160,90,.28) 0, rgba(255,140,80,.10) 35%, transparent 70%); } }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--accent); }
@@ -187,6 +190,12 @@ main { display: flex; flex-direction: column; }
     <ellipse cx="48" cy="80" rx="10" ry="3" fill="var(--shade-edge)" fill-opacity=".5"/>
     <ellipse class="on" cx="48" cy="80" rx="10" ry="3" fill="var(--lit)"/>
     <!-- ball-chain pull; anchored at the rim so it stretches rather than detaches -->
+    <!-- handwritten nudge toward the pull chain; fades out once the lamp is on -->
+    <g class="hint" aria-hidden="true">
+      <text x="16" y="149" text-anchor="end">try dark mode</text>
+      <path d="M 19 145 C 26 148, 34 148, 36 142 C 37.5 136, 29 135, 29 141 C 29 147, 40 145, 47 137 C 52 132, 56 127, 60 122"/>
+      <path d="M 54 124 L 60 122 L 59 128"/>
+    </g>
     <g class="string pull" id="pull">
       <line x1="72" y1="78" x2="72" y2="108" stroke="var(--cord)" stroke-width=".6"/>
       <circle cx="72" cy="82" r="1.6" fill="var(--cord)"/><circle cx="72" cy="86" r="1.6" fill="var(--cord)"/><circle cx="72" cy="90" r="1.6" fill="var(--cord)"/><circle cx="72" cy="94" r="1.6" fill="var(--cord)"/><circle cx="72" cy="98" r="1.6" fill="var(--cord)"/><circle cx="72" cy="102" r="1.6" fill="var(--cord)"/><circle cx="72" cy="106" r="1.6" fill="var(--cord)"/>
