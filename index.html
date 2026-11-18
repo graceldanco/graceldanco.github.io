@@ -66,7 +66,9 @@ p:last-child { margin-bottom: 0; }
 .side nav { display: flex; flex-direction: column; gap: 2px; }
 .side nav a { color: var(--muted); }
 .side nav a:hover, .side nav a.active { color: var(--accent); }
-.side .socials { margin-top: 28px; font-size: 12px; letter-spacing: .02em; }
+.side .socials { margin-top: 28px; font-size: 11px; letter-spacing: .02em; flex-direction: row; flex-wrap: wrap; gap: 0; align-items: baseline; }
+.side .socials a + a::before { content: "\00b7"; color: var(--muted); margin: 0 7px; }
+.side .socials a:hover::before { color: var(--muted); }
 
 /* content */
 .page { display: none; }
