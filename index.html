@@ -89,6 +89,8 @@ p:last-child { margin-bottom: 0; }
 .library .flower { display: inline-block; width: 12px; height: 12px; margin-left: 5px; vertical-align: -1px; color: var(--accent); }
 .library .reading::after { content: " — reading"; color: var(--muted); font-style: italic; }
 .footnote { display: none; }
+.key { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
+.key .flower { display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: -1px; color: var(--accent); }
 
 /* photography */
 .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: start; padding-top: 84px; }
@@ -189,6 +191,7 @@ main { display: flex; flex-direction: column; }
 
     <section class="page" id="page-library">
       <p class="label">Library</p>
+      <p class="key"><svg class="flower" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><ellipse cx="12" cy="5.5" rx="3.2" ry="4.6"/><ellipse cx="12" cy="18.5" rx="3.2" ry="4.6"/><ellipse cx="5.5" cy="12" rx="4.6" ry="3.2"/><ellipse cx="18.5" cy="12" rx="4.6" ry="3.2"/></g><circle cx="12" cy="12" r="2.6" fill="var(--bg)"/></svg> These are my favorites I would recommend to anyone.</p>
       <ul class="list library" id="library"></ul>
     </section>
 
