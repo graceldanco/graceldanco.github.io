@@ -42,7 +42,8 @@ body {
   transition: opacity .9s ease; }
 .layout { position: relative; z-index: 1; }
 /* the lamp */
-.lamp { position: fixed; top: 0; right: 72px; width: 96px; height: 200px; z-index: 6; pointer-events: none; }
+.lamp { position: fixed; top: 0; right: 72px; width: 96px; height: 200px; z-index: 6; pointer-events: none; transition: opacity .5s ease; }
+.lamp.gone .pull { pointer-events: none; }
 .lamp svg { width: 100%; height: 100%; overflow: visible; }
 .lamp .pull { pointer-events: auto; cursor: pointer; }
 .lamp .string { transform-box: fill-box; transform-origin: 50% 0; transition: transform .18s ease-out; }
@@ -321,6 +322,7 @@ function show(target) {
   pages.forEach(p => document.getElementById("page-" + p).classList.toggle("active", p === name));
   document.querySelectorAll(".side nav a").forEach(a => a.classList.toggle("active", a.dataset.page === name));
   window.scrollTo({ top: 0 });
+  if (window.lampFadeReady) queueFade();
 }
 document.addEventListener("click", e => {
   const a = e.target.closest("a[href^='#']"); if (!a) return;
@@ -343,6 +345,36 @@ document.getElementById("pull").addEventListener("click", () => {
   }, 160);
 });
 try { const t = localStorage.getItem("theme"); if (t === "dark" || t === "light") root.dataset.theme = t; } catch (_) {}
+
+// the lamp fades out when scrolling brings a photo under it, and returns once the photo has passed
+let fadeQueued = false;
+function lampRect() {
+  // the solid part of the drawing (cord, dome, pull chain) spans x 20-76, y 0-116 of the 96x200 viewBox;
+  // the light cone below it is a glow and is allowed to fall on photos
+  const b = lampEl.getBoundingClientRect(), s = b.width / 96;
+  return { left: b.left + 20 * s, right: b.left + 76 * s, top: b.top, bottom: b.top + 116 * s };
+}
+function lampOverImage() {
+  const L = lampRect();
+  for (const img of document.querySelectorAll(".page.active img")) {
+    const r = img.getBoundingClientRect();
+    if (r.width && r.height && r.left < L.right && r.right > L.left && r.top < L.bottom && r.bottom > L.top) return true;
+  }
+  return false;
+}
+function fadeLamp() {
+  fadeQueued = false;
+  const gone = window.scrollY > 0 && lampOverImage();
+  lampEl.style.opacity = gone ? 0 : 1;
+  lampEl.classList.toggle("gone", gone);
+}
+function queueFade() { if (!fadeQueued) { fadeQueued = true; requestAnimationFrame(fadeLamp); } }
+addEventListener("scroll", queueFade, { passive: true });
+addEventListener("resize", queueFade);
+addEventListener("hashchange", queueFade);
+document.addEventListener("load", queueFade, true); // images finishing loading shift the layout
+window.lampFadeReady = true;
+fadeLamp();
 </script>
 </body>
 </html>
