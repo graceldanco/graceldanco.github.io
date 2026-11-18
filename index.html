@@ -95,6 +95,16 @@ p:last-child { margin-bottom: 0; }
 .writing .date { color: var(--muted); font-variant-numeric: tabular-nums; }
 .writing a:hover { color: var(--accent); }
 
+/* posts */
+.post { max-width: 34em; }
+.post h1 { font-size: 15px; font-weight: 500; margin: 0 0 2px; }
+.post .meta { color: var(--muted); font-variant-numeric: tabular-nums; margin: 0 0 1.4em; }
+.post .sub { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 2em 0 10px; }
+.post a { color: var(--accent); }
+.post a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.resources li { padding: 3px 0; }
+.resources .by { color: var(--muted); }
+
 /* library */
 .library li { padding: 3px 0; }
 .library .by { color: var(--muted); }
@@ -211,7 +221,7 @@ main { display: flex; flex-direction: column; }
           <li>I work as a Sr Data Scientist at <a href="https://uniswap.org">Uniswap</a>. Crypto went from a fascination to a career &amp; I’ve been lucky enough to have had various jobs in the industry for the past 5 years.</li>
           <li>I find joy in taking film photographs, developing &amp; printing them.</li>
           <li>My writing comes in two forms: an outlet for my imagination, or a way to learn what I don’t know. I am working on sharing both of these more publicly.</li>
-          <li>I’ve recently become obsessed with materials. It grew out of a fascination around how difficult it is to remove plastics from my life (yes the microplastics frenzy got to me) and became a deeper love for learning how raw materials are transformed &amp; the supply chains that distribute them across the globe. If you’re also curious, I’ve put together a <a href="#library">list of resources</a> I’ve been consuming to learn!</li>
+          <li>I’ve recently become obsessed with materials. It grew out of a fascination around how difficult it is to remove plastics from my life (yes the microplastics frenzy got to me) and became a deeper love for learning how raw materials are transformed &amp; the supply chains that distribute them across the globe. If you’re also curious, I’ve put together a <a href="#materials">list of resources</a> I’ve been consuming to learn!</li>
         </ul>
         <p class="close">If it sounds like we’d get along, please reach out on <a href="https://x.com/_grace_lily">x</a> or <a href="mailto:graceldanco@gmail.com">email</a> :)</p>
       </div>
@@ -220,6 +230,44 @@ main { display: flex; flex-direction: column; }
     <section class="page" id="page-writing">
       <p class="label">Writing</p>
       <ul class="list writing" id="writing"></ul>
+    </section>
+
+    <section class="page" id="page-materials">
+      <p class="label">Writing</p>
+      <article class="post">
+        <h1>Learning about materials</h1>
+        <p class="meta">Nov 2026</p>
+        <p>A running list of what I’ve been reading, listening to and poking at while learning how raw materials are made and moved around the world.</p>
+
+        <p class="sub">Books</p>
+        <ul class="list resources">
+          <li><a href="https://bookshop.org/search?keywords=Material+World+Ed+Conway">Material World</a> <span class="by">Ed Conway</span></li>
+          <li><a href="https://bookshop.org/search?keywords=The+Material+Advantage+Bulkin">The Material Advantage</a> <span class="by">Bernard J. Bulkin</span></li>
+          <li><a href="https://bookshop.org/search?keywords=Stuff+Matters+Miodownik">Stuff Matters</a> <span class="by">Mark Miodownik</span></li>
+          <li><a href="https://bookshop.org/search?keywords=How+the+World+Really+Works+Smil">How the World Really Works</a> <span class="by">Vaclav Smil</span></li>
+          <li><a href="https://www.penguin.co.uk/books/476890/trade-world-by-conway-ed/9780753562727">Trade World</a> <span class="by">Ed Conway</span></li>
+          <li><a href="https://podcasts.apple.com/us/podcast/elements/id820289785">Elements</a> <span class="by">BBC World Service, presented by Justin Rowlatt</span></li>
+          <li><a href="https://bookshop.org/search?keywords=Making+the+Modern+World+Smil">Making the Modern World</a> <span class="by">Vaclav Smil</span></li>
+        </ul>
+
+        <p class="sub">Datasets</p>
+        <ul class="list resources">
+          <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities-united-states">Historical import/export of materials to the US</a> <span class="by">USGS</span></li>
+        </ul>
+
+        <p class="sub">Podcasts</p>
+        <ul class="list resources">
+          <li><a href="https://materialismpodcast.com/">Materialism</a> <span class="by">hosted by two professors of materials science, Taylor Sparks &amp; Andrew Falkowski</span></li>
+        </ul>
+
+        <p class="sub">Blogs &amp; news</p>
+        <ul class="list resources">
+          <li><a href="https://www.construction-physics.com/">Construction Physics</a> <span class="by">sometimes covers materials, like <a href="https://www.construction-physics.com/p/helium-is-hard-to-replace">this piece on helium</a></span></li>
+          <li><a href="https://mineralstrategist.substack.com/">The Commodity Strategist</a> <span class="by">Substack</span></li>
+          <li><a href="https://theoregongroup.substack.com/">The Oregon Group</a> <span class="by">Substack</span></li>
+          <li><a href="https://www.reuters.com/markets/commodities/">Reuters</a> <span class="by">commodities section</span></li>
+        </ul>
+      </article>
     </section>
 
     <section class="page" id="page-library">
@@ -244,6 +292,7 @@ main { display: flex; flex-direction: column; }
 <script>
 // ---- Content ----
 const WRITING = [
+  { date: "2026-11-17", title: "Learning about materials", url: "#materials" },
   { date: "2022-02-01", title: "PostgreSQL Query Optimization Tricks", url: "https://medium.com/@gracelily/postgresql-query-optimization-tricks-6d5b7358d7fa" },
 ];
 
@@ -303,7 +352,7 @@ const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-US", { month: 
 
 document.getElementById("writing").innerHTML = [...WRITING]
   .sort((a, b) => b.date.localeCompare(a.date))
-  .map(w => `<li><span class="date">${w.date ? fmt(w.date) : ""}</span><a href="${esc(w.url)}" target="_blank" rel="noopener">${esc(w.title)}</a></li>`).join("");
+  .map(w => `<li><span class="date">${w.date ? fmt(w.date) : ""}</span><a href="${esc(w.url)}"${w.url.startsWith("#") ? "" : ' target="_blank" rel="noopener"'}>${esc(w.title)}</a></li>`).join("");
 
 const FLOWER = `<svg class="flower" viewBox="0 0 24 24" aria-label="loved"><g fill="currentColor"><ellipse cx="12" cy="5.5" rx="3.2" ry="4.6"/><ellipse cx="12" cy="18.5" rx="3.2" ry="4.6"/><ellipse cx="5.5" cy="12" rx="4.6" ry="3.2"/><ellipse cx="18.5" cy="12" rx="4.6" ry="3.2"/></g><circle cx="12" cy="12" r="2.6" fill="var(--bg)"/></svg>`;
 document.getElementById("library").innerHTML = LIBRARY
@@ -353,12 +402,13 @@ lb.addEventListener("touchend", e => {
   if (Math.abs(dx) > 40) showPhoto(current + (dx < 0 ? 1 : -1));
 });
 
-const pages = ["about", "writing", "library", "photography"];
+const pages = ["about", "writing", "library", "photography", "materials"];
+const navFor = { materials: "writing" };
 function show(target) {
   const h = target || (location.hash || "#about").slice(1);
   const name = pages.includes(h) ? h : "about";
   pages.forEach(p => document.getElementById("page-" + p).classList.toggle("active", p === name));
-  document.querySelectorAll(".side nav a").forEach(a => a.classList.toggle("active", a.dataset.page === name));
+  document.querySelectorAll(".side nav a").forEach(a => a.classList.toggle("active", a.dataset.page === (navFor[name] || name)));
   window.scrollTo({ top: 0 });
   if (window.lampFadeReady) queueFade();
 }
