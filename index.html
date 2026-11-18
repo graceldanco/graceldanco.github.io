@@ -74,6 +74,13 @@ p:last-child { margin-bottom: 0; }
 
 /* index */
 .portrait { width: 220px; height: 220px; object-fit: cover; display: block; margin: 0 0 32px; }
+.about { max-width: 34em; }
+.about .open { margin: 0 0 1.6em; }
+.about .close { margin: 1.6em 0 0; }
+.about ul { list-style: none; margin: 0; padding: 0; }
+.about li { position: relative; padding-left: 18px; margin: 0 0 .9em; }
+.about li:last-child { margin-bottom: 0; }
+.about li::before { content: ""; position: absolute; left: 0; top: 10px; width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
 .quote { margin-top: 64px; color: var(--muted); font-style: italic; max-width: 32em; }
 .quote span { display: block; font-style: normal; margin-top: 4px; }
 
@@ -178,8 +185,17 @@ main { display: flex; flex-direction: column; }
   <main>
     <section class="page" id="page-about">
       <img class="portrait" alt="Grace at the beach at sunset" src="photos/portrait.jpg">
-      <p>Hi, I’m Grace. I live in LA but frequent NYC, as my friends and coworkers are based there. I work as a Senior Data Scientist at Uniswap, but when I’m not focused on AMM growth or optimal routing, you can find me playing tennis, in the darkroom, or simply, reading.</p>
-      <p>Recently, I’ve become obsessed with materials. It grew out of a fascination with the difficulty in removing synthetic polymers (plastic) from my life into a deeper love for learning how raw materials are transformed & the supply chains that distribute them across the globe. If you want to follow along or reach out to talk about my favorite topic, you can find me on X <a href="https://x.com/_grace_lily">@_grace_lily</a>, <a href="https://www.linkedin.com/in/grace-danco-bbb020192/">LinkedIn</a>, or email <a href="mailto:graceldanco@gmail.com">graceldanco@gmail.com</a>.</p>
+      <div class="about">
+        <p class="open">Hi, I’m Grace.</p>
+        <ul>
+          <li>I recently moved from NYC to LA.</li>
+          <li>I work as a Sr Data Scientist for Uniswap. Crypto went from a fascination to a career &amp; I’ve been lucky enough to have had various jobs in the industry for the past 5 years.</li>
+          <li>I find joy in taking film photographs, developing &amp; printing them.</li>
+          <li>My writing comes in two forms: an outlet for my imagination, or a way to learn what I don’t know. I am working on sharing both of these more publicly.</li>
+          <li>I’ve recently become obsessed with materials. It grew out of a fascination around how difficult it is to remove plastics from my life (yes the microplastics frenzy got to me) and became a deeper love for learning how raw materials are transformed &amp; the supply chains that distribute them across the globe. If you’re also curious, I’ve put together a <a href="#library">list of resources</a> I’ve been consuming to learn!</li>
+        </ul>
+        <p class="close">If it sounds like we’d get along, please reach out on <a href="https://x.com/_grace_lily">x</a> or <a href="mailto:graceldanco@gmail.com">email</a> :)</p>
+      </div>
     </section>
 
     <section class="page" id="page-writing">
