@@ -91,6 +91,9 @@ p:last-child { margin-bottom: 0; }
 .footnote { display: none; }
 
 /* photography */
+.intro { margin: 0; max-width: 34em; }
+.intro a { color: var(--accent); }
+.intro a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: start; padding-top: 84px; }
 .photos .col { display: flex; flex-direction: column; gap: 8px; }
 .photos figure { margin: 0; }
@@ -194,6 +197,7 @@ main { display: flex; flex-direction: column; }
 
     <section class="page" id="page-photography">
       <p class="label">Photography</p>
+      <p class="intro">To see more of my work, visit my instagram <a href="https://www.instagram.com/smalldropofgrace">@smalldropofgrace</a> or <a href="https://smalldropofgrace.com">portfolio website</a>.</p>
       <div class="photos" id="photos"></div>
     </section>
 
