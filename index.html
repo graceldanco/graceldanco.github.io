@@ -306,15 +306,75 @@ const WRITING = [
 ];
 
 // status: "loved" | "reading" | ""
+// Shown A–Z by title (leading "A", "An", "The" ignored), whatever the order here.
 const LIBRARY = [
-  { title: "East of Eden", author: "John Steinbeck", status: "loved" },
-  { title: "Material World", author: "Ed Conway", status: "loved" },
-  { title: "The Material Advantage", author: "Bernard J. Bulkin", status: "" },
-  { title: "Red Rising", author: "Pierce Brown", status: "" },
-  { title: "Golden Son", author: "Pierce Brown", status: "" },
-  { title: "Morning Star", author: "Pierce Brown", status: "" },
+  { title: "After Dark", author: "Haruki Murakami", status: "" },
+  { title: "Algorithms to Live By", author: "Brian Christian & Tom Griffiths", status: "" },
   { title: "Anna Karenina", author: "Leo Tolstoy", status: "" },
-  { title: "A Confession and Other Religious Writings", author: "Leo Tolstoy", status: "" },
+  { title: "Atomic Habits", author: "James Clear", status: "" },
+  { title: "Bliss Montage", author: "Ling Ma", status: "" },
+  { title: "Bluets", author: "Maggie Nelson", status: "" },
+  { title: "The Catcher in the Rye", author: "J.D. Salinger", status: "" },
+  { title: "Circe", author: "Madeline Miller", status: "" },
+  { title: "The Cold Start Problem", author: "Andrew Chen", status: "" },
+  { title: "A Confession and Other Religious Writings", author: "Leo Tolstoy", status: "loved" },
+  { title: "The Creative Act", author: "Rick Rubin", status: "" },
+  { title: "Dead Wake", author: "Erik Larson", status: "" },
+  { title: "The Death of Ivan Ilych", author: "Leo Tolstoy", status: "" },
+  { title: "Discourses and Selected Writings", author: "Epictetus", status: "" },
+  { title: "East of Eden", author: "John Steinbeck", status: "loved" },
+  { title: "Everything and More", author: "David Foster Wallace", status: "" },
+  { title: "Exhalation", author: "Ted Chiang", status: "" },
+  { title: "Fires", author: "Raymond Carver", status: "" },
+  { title: "Foundation", author: "Isaac Asimov", status: "" },
+  { title: "Franny and Zooey", author: "J.D. Salinger", status: "" },
+  { title: "Helgoland", author: "Carlo Rovelli", status: "" },
+  { title: "The Housekeeper and the Professor", author: "Yōko Ogawa", status: "" },
+  { title: "How the Universe Got Its Spots", author: "Janna Levin", status: "loved" },
+  { title: "How to Change Your Mind", author: "Michael Pollan", status: "" },
+  { title: "The Infinite Machine", author: "Camila Russo", status: "" },
+  { title: "Intermezzo", author: "Sally Rooney", status: "" },
+  { title: "Just Kids", author: "Patti Smith", status: "loved" },
+  { title: "Kafka on the Shore", author: "Haruki Murakami", status: "" },
+  { title: "Klara and the Sun", author: "Kazuo Ishiguro", status: "" },
+  { title: "The Material Advantage", author: "Bernard J. Bulkin", status: "" },
+  { title: "Material World", author: "Ed Conway", status: "loved" },
+  { title: "Never Let Me Go", author: "Kazuo Ishiguro", status: "" },
+  { title: "Never Split the Difference", author: "Chris Voss", status: "" },
+  { title: "Nine Stories", author: "J.D. Salinger", status: "" },
+  { title: "Norwegian Wood", author: "Haruki Murakami", status: "" },
+  { title: "Novelist as a Vocation", author: "Haruki Murakami", status: "" },
+  { title: "Of Mice and Men", author: "John Steinbeck", status: "" },
+  { title: "Piranesi", author: "Susanna Clarke", status: "" },
+  { title: "The Pope Who Quit", author: "Jon M. Sweeney", status: "" },
+  { title: "Pure Colour", author: "Sheila Heti", status: "" },
+  { title: "Red Rising trilogy", author: "Pierce Brown", status: "" },
+  { title: "Sacred Nature", author: "Karen Armstrong", status: "" },
+  { title: "The Secret History", author: "Donna Tartt", status: "" },
+  { title: "Severance", author: "Ling Ma", status: "" },
+  { title: "Slouching Towards Bethlehem", author: "Joan Didion", status: "" },
+  { title: "Snow Country", author: "Yasunari Kawabata", status: "" },
+  { title: "Stories of Your Life and Others", author: "Ted Chiang", status: "loved" },
+  { title: "Strangers to Ourselves", author: "Rachel Aviv", status: "" },
+  { title: "String Theory", author: "David Foster Wallace", status: "" },
+  { title: "The Surrender Experiment", author: "Michael A. Singer", status: "" },
+  { title: "Thinking In Systems", author: "Donella H. Meadows", status: "" },
+  { title: "This Is How You Lose the Time War", author: "Amal El-Mohtar & Max Gladstone", status: "" },
+  { title: "This Is Water", author: "David Foster Wallace", status: "" },
+  { title: "The Three-Body Problem trilogy", author: "Liu Cixin", status: "" },
+  { title: "To Hold Up the Sky", author: "Liu Cixin", status: "" },
+  { title: "Tokyo Ueno Station", author: "Yū Miri", status: "" },
+  { title: "The Untethered Soul", author: "Michael A. Singer", status: "" },
+  { title: "Weapons of Math Destruction", author: "Cathy O'Neil", status: "" },
+  { title: "What We Talk About When We Talk About Love", author: "Raymond Carver", status: "" },
+  { title: "When Breath Becomes Air", author: "Paul Kalanithi", status: "" },
+  { title: "Why We Sleep", author: "Matthew Walker", status: "" },
+  { title: "A Wild Sheep Chase", author: "Haruki Murakami", status: "" },
+  { title: "Wind/Pinball", author: "Haruki Murakami", status: "" },
+  { title: "The World for Sale", author: "Javier Blas", status: "" },
+  { title: "Yellowface", author: "R.F. Kuang", status: "" },
+  { title: "Zen and the Art of Motorcycle Maintenance", author: "Robert M. Pirsig", status: "" },
+  { title: "Zero to One", author: "Peter Thiel", status: "" },
 ];
 
 // Photographs, in display order. `src` is what the page loads; `file` is the copy in the photos/ folder
@@ -364,7 +424,9 @@ document.getElementById("writing").innerHTML = [...WRITING]
   .map(w => `<li><span class="date">${w.date ? fmt(w.date) : ""}</span><a href="${esc(w.url)}"${w.url.startsWith("#") ? "" : ' target="_blank" rel="noopener"'}>${esc(w.title)}</a></li>`).join("");
 
 const FLOWER = `<svg class="flower" viewBox="0 0 24 24" aria-label="loved"><g fill="currentColor"><ellipse cx="12" cy="5.5" rx="3.2" ry="4.6"/><ellipse cx="12" cy="18.5" rx="3.2" ry="4.6"/><ellipse cx="5.5" cy="12" rx="4.6" ry="3.2"/><ellipse cx="18.5" cy="12" rx="4.6" ry="3.2"/></g><circle cx="12" cy="12" r="2.6" fill="var(--bg)"/></svg>`;
-document.getElementById("library").innerHTML = LIBRARY
+const sortTitle = t => t.toLowerCase().replace(/^(the|an|a)\s+/, "");
+document.getElementById("library").innerHTML = [...LIBRARY]
+  .sort((a, b) => sortTitle(a.title).localeCompare(sortTitle(b.title)))
   .map(b => `<li><span class="${b.status}">${esc(b.title)}</span> <span class="by">${esc(b.author)}</span>${b.status === "loved" ? FLOWER : ""}</li>`).join("");
 
 const grid = document.getElementById("photos");
